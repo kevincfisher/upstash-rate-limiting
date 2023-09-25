@@ -59,7 +59,7 @@ export default function Home() {
           )}
         </div>
         <Button variant="outline" size="lg" className="mb-8 lg:mb-0" onClick={handleClick} disabled={hasError}>Click Here</Button>
-        {hasError && 'Error: ' + error}
+        {hasError ? (<span className='text-rose-600'>{'Error: ' + error}</span>) : null}
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
         <a
