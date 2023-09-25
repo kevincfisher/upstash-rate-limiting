@@ -14,7 +14,7 @@ export default async function middleware(request: NextRequest): Promise<Response
 console.log('inside middleware')
   // grab users ip address from request if available
   const ip = request.headers.get('x-real-ip') || request.headers.get('x-forwarded-for') || request.ip || '127.0.0.1'
-
+  console.log('ip', ip)
   // if requesting the blocked route, we can skip the rate limit check
   if(request.nextUrl.pathname === '/api/blocked') {
     return NextResponse.next(request)
